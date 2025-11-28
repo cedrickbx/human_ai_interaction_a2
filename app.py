@@ -65,7 +65,6 @@ with st.sidebar:
     interests = st.text_area("What are your interests?", placeholder="e.g., History, Food, Nature, Adventure", height=100, key="interests_input")
     
     # Budget Range
-    # Budget Range
     budget_options = [
         "Under $500",
         "$500 - $1,000",
