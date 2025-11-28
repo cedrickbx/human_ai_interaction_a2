@@ -124,7 +124,7 @@ with st.expander("ℹ️ System Capabilities", expanded=True):
         - Plan trips based on interests & budget.
         - Suggest activities & restaurants.
         - Respect social norms (Halal, Veg, Family-friendly, etc.).
-        - **Search the web** (Disabled).
+        - **Search the web**.
         
         **I cannot:**
         - Book flights or hotels.
