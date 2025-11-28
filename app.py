@@ -65,14 +65,21 @@ with st.sidebar:
     interests = st.text_area("What are your interests?", placeholder="e.g., History, Food, Nature, Adventure", height=100, key="interests_input")
     
     # Budget Range
-    budget_range = st.slider(
-        "Budget Range ($)",
-        min_value=0,
-        max_value=10000,
-        value=(1000, 3000),
-        step=100,
+    # Budget Range
+    budget_options = [
+        "Under $500",
+        "$500 - $1,000",
+        "$1,000 - $2,500",
+        "$2,500 - $5,000",
+        "$5,000 - $10,000",
+        "Above $10,000"
+    ]
+    budget_range = st.selectbox(
+        "Budget Range",
+        options=budget_options,
+        index=2, # Default to $1,000 - $2,500
         help="Select your estimated budget range for the trip.",
-        key="budget_slider"
+        key="budget_select"
     )
     
     # Date Range
@@ -162,7 +169,7 @@ if prompt := st.chat_input("Tell me about your trip ideas..."):
     
     **User Context:**
     - Interests: {interests}
-    - Budget Range: ${budget_range[0]} - ${budget_range[1]}
+    - Budget Range: {budget_range}
     - Trip Dates: {start_date} to {end_date if end_date else 'Unspecified'}
     - Duration: {duration} days
     
